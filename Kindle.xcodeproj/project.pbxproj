@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED45DDFB2423C5B000066F30 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED45DDFA2423C5B000066F30 /* PageCell.swift */; };
 		ED6A3D3024216FCA00EB443C /* BookPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6A3D2F24216FCA00EB443C /* BookPageController.swift */; };
 		EDAB3EA3241C122A0051F0F8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3EA2241C122A0051F0F8 /* Models.swift */; };
 		EDAB3EA52420289B0051F0F8 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAB3EA42420289B0051F0F8 /* BookCell.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED45DDFA2423C5B000066F30 /* PageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		ED6A3D2F24216FCA00EB443C /* BookPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageController.swift; sourceTree = "<group>"; };
 		EDAB3EA2241C122A0051F0F8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		EDAB3EA42420289B0051F0F8 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				EDE0E9752405AFD300B9AD06 /* ViewController.swift */,
 				EDAB3EA2241C122A0051F0F8 /* Models.swift */,
 				ED6A3D2F24216FCA00EB443C /* BookPageController.swift */,
+				ED45DDFA2423C5B000066F30 /* PageCell.swift */,
 				EDE0E97A2405AFDA00B9AD06 /* Assets.xcassets */,
 				EDE0E97C2405AFDA00B9AD06 /* LaunchScreen.storyboard */,
 				EDE0E97F2405AFDA00B9AD06 /* Info.plist */,
@@ -149,6 +152,7 @@
 				ED6A3D3024216FCA00EB443C /* BookPageController.swift in Sources */,
 				EDAB3EA3241C122A0051F0F8 /* Models.swift in Sources */,
 				EDAB3EA52420289B0051F0F8 /* BookCell.swift in Sources */,
+				ED45DDFB2423C5B000066F30 /* PageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
