@@ -17,10 +17,94 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupNavigationBarStyles()
+        setupNavigationBarButtons()
+        
         tableView.register(BookCell.self, forCellReuseIdentifier: "cellid")
         tableView.tableFooterView = UIView()
+        tableView.backgroundColor = UIColor(white: 1, alpha: 0.3)
+        tableView.separatorColor = UIColor(white: 1, alpha: 0.2)
+        
         navigationItem.title = "Kindle"
         fetchBooks()
+        
+        
+    }
+    
+    //Setting footer
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        
+        let segmentedControl = UISegmentedControl(items: ["Cloud", "Device"])
+        
+        segmentedControl.tintColor = .black
+        segmentedControl.selectedSegmentIndex = 0
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        footerView.addSubview(segmentedControl)
+        
+        //Constraints
+        segmentedControl.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        segmentedControl.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        segmentedControl.centerXAnchor.constraint(equalTo: footerView.centerXAnchor).isActive = true
+        segmentedControl.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+        
+        
+        //Grid button
+        let gridButton = UIButton(type: .system)
+        gridButton.setImage(#imageLiteral(resourceName: "icons8-data-grid-50").withRenderingMode(.alwaysOriginal), for: .normal)
+        gridButton.translatesAutoresizingMaskIntoConstraints = false
+        footerView.addSubview(gridButton)
+        
+        gridButton.leftAnchor.constraint(equalTo: footerView.leftAnchor, constant: 8).isActive = true
+        gridButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        gridButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        gridButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+        
+        //Sort button
+        let sortButton = UIButton(type: .system)
+        sortButton.setImage(#imageLiteral(resourceName: "icons8-up-down-arrow-50-2").withRenderingMode(.alwaysOriginal), for: .normal)
+        sortButton.translatesAutoresizingMaskIntoConstraints = false
+        footerView.addSubview(sortButton)
+        
+        sortButton.rightAnchor.constraint(equalTo: footerView.rightAnchor, constant: -8).isActive = true
+        sortButton.widthAnchor.constraint(equalToConstant: 40).isActive = true
+        sortButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        sortButton.centerYAnchor.constraint(equalTo: footerView.centerYAnchor).isActive = true
+        return footerView
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50
+    }
+    
+    
+    func setupNavigationBarButtons() {
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "hamburger-icon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMenuPress))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "amazon-icon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAmazonIconPress))
+    }
+    
+    @objc func handleMenuPress() {
+        print("Menu pressed")
+    }
+    
+    @objc func handleAmazonIconPress() {
+        print("Amazon icon pressed")
+    }
+    
+    
+    func setupNavigationBarStyles() {
+
+        navigationController?.navigationBar.barTintColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1)
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     

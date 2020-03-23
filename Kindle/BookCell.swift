@@ -48,7 +48,9 @@ class BookCell: UITableViewCell {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.text = "This is the title for the title of our book inside our cell"
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
       
         return label
@@ -57,6 +59,7 @@ class BookCell: UITableViewCell {
     private let authorLabel: UILabel = {
         let label = UILabel()
         label.text = "This is some author for the book that we have in this row"
+        label.textColor = .lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
        
         return label
@@ -65,7 +68,7 @@ class BookCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-    
+        backgroundColor = .clear
         
         // add image cover
         addSubview(coverImageView)
